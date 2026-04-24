@@ -358,7 +358,35 @@
   }
   .cd-label { font-size: 0.65rem; letter-spacing:0.2em; text-transform:uppercase; opacity:0.55; color:var(--white); margin-top:0.3rem; }
 
-  /* ── MASCOT ── */
+  /* ── STRIPAS ── */
+  .stripa {
+    position: fixed;
+    top: 0;
+    width: 32px;
+    height: 200vh;
+    background-image: url('stripas.png');
+    background-size: 32px auto;
+    background-repeat: repeat-y;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  .stripa-left {
+    left: 0;
+    animation: scrollDown 6s linear infinite;
+  }
+  .stripa-right {
+    right: 0;
+    animation: scrollUp 6s linear infinite;
+  }
+  @keyframes scrollDown {
+    from { transform: translateY(-50%); }
+    to   { transform: translateY(0%); }
+  }
+  @keyframes scrollUp {
+    from { transform: translateY(0%); }
+    to   { transform: translateY(-50%); }
+  }
   @keyframes mascotFloat {
     0%   { transform: translateY(0px); }
     100% { transform: translateY(-18px); }
@@ -378,6 +406,8 @@
 <body>
 
 <!-- NAV -->
+<div class="stripa stripa-left"></div>
+<div class="stripa stripa-right"></div>
 <nav>
   <div class="nav-logo">TrādiRīga</div>
   <ul class="nav-links">
