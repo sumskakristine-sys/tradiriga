@@ -361,32 +361,19 @@
   /* ── STRIPAS ── */
   .stripa {
     position: fixed;
-    top: 0;
-    width: 32px;
-    height: 200vh;
+    top: -100%;
+    width: 36px;
+    height: 400vh;
     background-image: url('stripas.png');
-    background-size: 32px auto;
+    background-size: 36px auto;
     background-repeat: repeat-y;
     z-index: 50;
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.65;
+    will-change: transform;
   }
-  .stripa-left {
-    left: 0;
-    animation: scrollDown 6s linear infinite;
-  }
-  .stripa-right {
-    right: 0;
-    animation: scrollUp 6s linear infinite;
-  }
-  @keyframes scrollDown {
-    from { transform: translateY(-50%); }
-    to   { transform: translateY(0%); }
-  }
-  @keyframes scrollUp {
-    from { transform: translateY(0%); }
-    to   { transform: translateY(-50%); }
-  }
+  .stripa-left  { left: 0; }
+  .stripa-right { right: 0; }
   @keyframes mascotFloat {
     0%   { transform: translateY(0px); }
     100% { transform: translateY(-18px); }
@@ -526,6 +513,15 @@
 </footer>
 
 <script>
+  // Parallax stripas
+  const stripaLeft  = document.querySelector('.stripa-left');
+  const stripaRight = document.querySelector('.stripa-right');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    stripaLeft.style.transform  = `translateY(${y * 0.25}px)`;
+    stripaRight.style.transform = `translateY(${y * -0.25}px)`;
+  }, { passive: true });
+
   // Countdown to May 24, 2026 12:00 Riga time
   const target = new Date('2026-05-24T12:00:00+03:00');
   function updateCountdown() {
