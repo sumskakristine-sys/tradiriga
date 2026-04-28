@@ -11,6 +11,12 @@
     font-weight: 100 900;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'TradiDisplay';
+    src: url('_37861.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 </style>
 <style>
   :root {
@@ -54,6 +60,7 @@
     border-bottom: 2px solid rgba(102,0,192,0.15);
   }
   .nav-logo {
+    font-family: 'TradiDisplay', sans-serif;
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
@@ -150,8 +157,9 @@
   .s-label::before { content:''; display:block; width:30px; height:2px; background:var(--grad); border-radius:99px; }
 
   .s-title {
-    font-weight: 900;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-family: 'TradiDisplay', sans-serif;
+    font-weight: normal;
+    font-size: clamp(2.8rem, 6vw, 5rem);
     line-height: 1;
     letter-spacing: -0.02em;
     margin-bottom: 3rem;
@@ -319,6 +327,7 @@
     pointer-events: none;
   }
   .footer-logo {
+    font-family: 'TradiDisplay', sans-serif;
     font-weight: 900;
     font-size: 3rem;
     background: var(--grad);
@@ -517,7 +526,8 @@
         transform: scale(1.1);
       }
       .artist-name {
-        font-weight: 900;
+        font-family: 'TradiDisplay', sans-serif;
+        font-weight: normal;
         font-size: 1rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
