@@ -456,7 +456,7 @@
 
     <!-- LINEUP BLOCK -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
-      <div style="font-weight:900; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:2rem;">Skatuves programma</div>
+      <div style="font-family:'DisplayFont','Inter',sans-serif; font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Skatuves programma</div>
 
       <!-- BIG 3 ROUND PHOTOS -->
       <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-bottom:2rem;">
@@ -538,7 +538,7 @@
 
     <!-- ACTIVITIES BLOCK -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
-      <div style="font-weight:900; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.6rem;">Saturīgas pieredzes ģimenēm un bērniem</div>
+      <div style="font-family:'DisplayFont','Inter',sans-serif; font-size:clamp(1.8rem,3.5vw,2.5rem); margin-bottom:1rem; letter-spacing:-0.01em;">Saturīgas pieredzes ģimenēm un bērniem</div>
       <div style="font-size:0.95rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#333; line-height:1.8;">
         Pielaiko sportu · Pielaiko profesiju · Mūzikas darbnīcas · STEAM zinātņu darbnīcas<br>
         Ilgtspējas darbnīcas · Muzeju zona · Teātra un cirka zona<br>
@@ -548,7 +548,7 @@
 
     <!-- QUOTES BLOCK -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
-      <div style="font-weight:900; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1.2rem;">Saka par festivālu</div>
+      <div style="font-family:'DisplayFont','Inter',sans-serif; font-size:clamp(1.8rem,3.5vw,2.5rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Saka par festivālu</div>
       <div style="display:flex; flex-direction:column; gap:1.5rem;">
         <div>
           <p style="font-size:1rem; line-height:1.75; color:#1a1a1a; font-style:italic; margin-bottom:0.5rem;">"Es vēlos, lai Rīga šovasar kļūst par vietu, kur rīdzinieki un pilsētas viesi var satikties un kopā gūt jaunus iespaidus. Tā kā Uzvaras parks jau šobrīd ir viena no iecienītākajām vietām, kur ģimenes pavada savu brīvo laiku, ir tikai loģiski, ka vasaru pilsētā atklājam ar festivālu "TrādiRīga". Tā būs iespēja būt kopā ar savējiem, lai līdzdarbotos un baudītu īpašo svētku sajūtu!"</p>
@@ -575,12 +575,30 @@
 <section id="karte" style="background:var(--off); padding:5rem 1.5rem;">
   <div class="inner">
     <div class="s-label">Festivāla karte</div>
-    <h2 class="s-title">Uzvaras parks</h2>
-    <img
-      src="MAP_1920x1080.png"
-      alt="TrādiRīga festivāla karte — Uzvaras parks"
-      style="width:100%; border-radius:24px; display:block; box-shadow: 0 20px 60px rgba(102,0,192,0.15);"
-    />
+    <h2 style="font-family:'DisplayFont','Inter',sans-serif; font-weight:normal; font-size:clamp(2.5rem,6vw,4.5rem); line-height:1; margin-bottom:2rem;">Festivāla karte</h2>
+    <div style="perspective:1200px; cursor:pointer;" id="map-wrap">
+      <img
+        src="MAP_1920x1080.png"
+        alt="TrādiRīga festivāla karte — Uzvaras parks"
+        id="map-img"
+        style="width:100%; border-radius:24px; display:block; box-shadow: 0 20px 60px rgba(102,0,192,0.2); transform: rotateX(3deg) rotateY(-2deg) scale(1.01); transition: transform 0.1s ease, box-shadow 0.3s ease; will-change:transform;"
+      />
+    </div>
+    <script>
+      const mapWrap = document.getElementById('map-wrap');
+      const mapImg  = document.getElementById('map-img');
+      mapWrap.addEventListener('mousemove', (e) => {
+        const r = mapWrap.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        mapImg.style.transform = `rotateX(${-y * 10}deg) rotateY(${x * 12}deg) scale(1.03)`;
+        mapImg.style.boxShadow = `${-x*30}px ${-y*20}px 60px rgba(102,0,192,0.25)`;
+      });
+      mapWrap.addEventListener('mouseleave', () => {
+        mapImg.style.transform = 'rotateX(3deg) rotateY(-2deg) scale(1.01)';
+        mapImg.style.boxShadow = '0 20px 60px rgba(102,0,192,0.2)';
+      });
+    </script>
   </div>
 </section>
 
