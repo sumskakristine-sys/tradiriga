@@ -420,13 +420,15 @@
   <div class="blob"></div>
   <div class="blob"></div>
 
-  <div style="perspective:1000px; position:relative; z-index:2; width:100%; max-width:980px; margin:0 auto 0.5rem;" id="hero-header-wrap">
-    <img
-      id="hero-header-img"
-      src="header1.png"
-      alt="TrādiRīga — RadiRīga, DariRīga, RādiRīga"
-      style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.08s ease; will-change:transform; animation:titleIn 0.8s cubic-bezier(.16,1,.3,1) both;"
-    />
+  <div style="animation:titleIn 0.8s cubic-bezier(.16,1,.3,1) both; position:relative; z-index:2; width:100%; max-width:980px; margin:0 auto 0.5rem;">
+    <div style="perspective:1000px;" id="hero-header-wrap">
+      <img
+        id="hero-header-img"
+        src="header1.png"
+        alt="TrādiRīga — RadiRīga, DariRīga, RādiRīga"
+        style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.1s ease; will-change:transform;"
+      />
+    </div>
   </div>
   <p class="hero-sub">Tavas ģimenes piedzīvojums Rīgas sirdī</p>
 
