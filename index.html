@@ -448,35 +448,84 @@
 
     <!-- LINEUP BLOCK -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
-      <div style="font-weight:900; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1.2rem;">Skatuves programma</div>
+      <div style="font-weight:900; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:2rem;">Skatuves programma</div>
 
-      <!-- BIG 3 WITH PHOTOS -->
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1.5rem;">
-        <div style="border-radius:16px; overflow:hidden; position:relative;">
-          <img src="KK-11.jpg" alt="Kaut Kaili" style="width:100%; height:260px; object-fit:cover; display:block; filter:grayscale(20%);">
-          <div style="position:absolute; bottom:0; left:0; right:0; padding:1rem; background:linear-gradient(transparent,rgba(0,0,0,0.85));">
-            <div style="font-weight:900; font-size:1.1rem; color:#fff; text-transform:uppercase; letter-spacing:0.05em;">Kaut Kaili</div>
+      <!-- BIG 3 ROUND PHOTOS -->
+      <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-bottom:2rem;">
+
+        <div class="artist-card" style="--deg:-6deg; --color:#FF1AE9;">
+          <div class="artist-ring">
+            <img src="KK-11.jpg" alt="Kaut Kaili">
           </div>
+          <div class="artist-name">Kaut Kaili</div>
         </div>
-        <div style="border-radius:16px; overflow:hidden; position:relative;">
-          <img src="Emilija-2.jpg" alt="Emilija" style="width:100%; height:260px; object-fit:cover; display:block; object-position:top;">
-          <div style="position:absolute; bottom:0; left:0; right:0; padding:1rem; background:linear-gradient(transparent,rgba(0,0,0,0.85));">
-            <div style="font-weight:900; font-size:1.1rem; color:#fff; text-transform:uppercase; letter-spacing:0.05em;">Emilija</div>
+
+        <div class="artist-card" style="--deg:4deg; --color:#6600C0; margin-top:2rem;">
+          <div class="artist-ring">
+            <img src="Emilija-2.jpg" alt="Emilija" style="object-position:top;">
           </div>
+          <div class="artist-name">Emilija</div>
         </div>
-        <div style="border-radius:16px; overflow:hidden; position:relative;">
-          <img src="ELPO_FOTO_2.jpg" alt="ELPO" style="width:100%; height:260px; object-fit:cover; display:block;">
-          <div style="position:absolute; bottom:0; left:0; right:0; padding:1rem; background:linear-gradient(transparent,rgba(0,0,0,0.85));">
-            <div style="font-weight:900; font-size:1.1rem; color:#fff; text-transform:uppercase; letter-spacing:0.05em;">ELPO</div>
+
+        <div class="artist-card" style="--deg:-3deg; --color:#1B1BEA;">
+          <div class="artist-ring">
+            <img src="ELPO_FOTO_2.jpg" alt="ELPO">
           </div>
+          <div class="artist-name">ELPO</div>
         </div>
+
       </div>
 
       <!-- REST OF LINEUP -->
-      <div style="font-size:0.95rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#333;">
+      <div style="font-size:0.95rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#333; text-align:center;">
         Fiņķis un Madonas Zaļais koris · Elza Rozentāle · Laime Pilnīga · Annika · Tutas Lapsa un Feneks · Drumline Latvia
       </div>
     </div>
+
+    <style>
+      .artist-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        transform: rotate(var(--deg));
+        transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
+        cursor: default;
+      }
+      .artist-card:hover {
+        transform: rotate(0deg) scale(1.08) translateY(-10px);
+      }
+      .artist-ring {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid var(--color);
+        box-shadow: 0 0 0 3px #fff, 0 12px 40px rgba(0,0,0,0.15);
+        transition: box-shadow 0.3s ease;
+      }
+      .artist-card:hover .artist-ring {
+        box-shadow: 0 0 0 3px #fff, 0 0 0 8px var(--color), 0 20px 50px rgba(0,0,0,0.2);
+      }
+      .artist-ring img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .artist-card:hover .artist-ring img {
+        transform: scale(1.1);
+      }
+      .artist-name {
+        font-weight: 900;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color);
+        text-align: center;
+      }
+    </style>
 
     <!-- ACTIVITIES BLOCK -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
