@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "http://tradiriga.lv/*"
+  to = "https://tradiriga.lv/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.tradiriga.lv/*"
+  to = "https://tradiriga.lv/:splat"
+  status = 301
+  force = true
