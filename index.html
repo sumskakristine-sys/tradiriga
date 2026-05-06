@@ -33,15 +33,12 @@
     --purple: #6600C0;
     --blue: #1B1BEA;
     --grad: linear-gradient(135deg, #FF1AE9, #1B1BEA);
-
     --black: #0D0D0D;
     --white: #FFFFFF;
     --off: #E0CCF3;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { overflow-x: hidden; }
-  html { scroll-behavior: smooth; }
-
+  html { overflow-x: hidden; scroll-behavior: smooth; }
   body {
     background: var(--white);
     color: var(--black);
@@ -69,16 +66,6 @@
     backdrop-filter: blur(14px);
     border-bottom: 2px solid rgba(102,0,192,0.15);
   }
-  .nav-logo {
-    font-family: 'TradiDisplay', sans-serif;
-    font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 1.5rem;
-    background: var(--grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
   .nav-links { display:flex; gap:2rem; list-style:none; }
   .nav-links a {
     color: var(--black);
@@ -89,7 +76,6 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--purple); }
-
 
   /* ── HERO ── */
   .hero {
@@ -107,8 +93,6 @@
   .hero .blob:nth-child(1) { width:500px;height:500px; background:var(--pink); top:-80px; left:-100px; animation-delay:0s; opacity:0.12; }
   .hero .blob:nth-child(2) { width:400px;height:400px; background:var(--purple); top:30%; right:-80px; animation-delay:2s; opacity:0.12; }
   .hero .blob:nth-child(3) { width:300px;height:300px; background:var(--pink); bottom:5%; left:25%; animation-delay:1s; opacity:0.08; }
-
-  .hero-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem; margin-bottom:1.5rem; position:relative; z-index:2; }
 
   .hero-sub {
     font-family: 'Inter', sans-serif;
@@ -146,12 +130,9 @@
   .meta-chip:first-child { border-radius: 100px 0 0 100px; }
   .meta-chip:last-child { border-radius: 0 100px 100px 0; background: var(--grad); color: var(--white); border-color: transparent; }
 
-
-
   /* ── SECTION SHARED ── */
   section { padding: 6rem 1.5rem; }
   .inner { max-width: 1100px; margin: 0 auto; }
-
   .s-label {
     display: inline-flex;
     align-items: center;
@@ -166,135 +147,147 @@
   }
   .s-label::before { content:''; display:block; width:30px; height:2px; background:var(--grad); border-radius:99px; }
 
-  .s-title {
-    font-family: 'TradiDisplay', 'Inter', sans-serif;
-    font-weight: normal;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 3rem;
-  }
-
-  /* ── ZONES GRID ── */
-  #zones { background: var(--black); color: var(--white); }
-  #zones .s-label { color: var(--pink); }
-  #zones .s-label::before { background: var(--pink); }
-
-  .zones-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-  .zone-card {
+  /* ── LINEUP GRID ── */
+  .lineup-section {
+    background: var(--off);
     border-radius: 24px;
-    padding: 2rem;
-    position: relative;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
     overflow: hidden;
-    transition: transform 0.2s;
-    cursor: default;
   }
-  .zone-card:hover { transform: translateY(-6px); }
-  .zone-card::before {
-    content:'';
-    position:absolute;
-    inset:0;
-    background: var(--grad);
-    opacity: 0.12;
-    transition: opacity 0.2s;
-  }
-  .zone-card:hover::before { opacity: 0.2; }
-  .zone-card { border: 1.5px solid rgba(255,255,255,0.12); }
-
-  .zone-icon { font-size: 2.5rem; margin-bottom: 1rem; display:block; }
-  .zone-name {
+  .lineup-headliners {
+    font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: 1.6rem;
-    background: var(--grad);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    line-height: 1.15;
     letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
   }
-  .zone-tagline { font-size: 0.8rem; opacity: 0.5; margin-bottom: 1rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Inter', sans-serif; }
-  .zone-desc { font-size: 0.95rem; line-height: 1.6; opacity: 0.8; }
-  .zone-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:1.2rem; }
-  .zone-tag {
-    font-size: 0.72rem;
+  .lineup-headliners .sep {
+    color: var(--purple);
+    opacity: 0.4;
+    margin: 0 0.15em;
+  }
+  .lineup-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 1.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .lineup-photo-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .lineup-photo-grid img:hover {
+    transform: scale(1.05);
+  }
+  .lineup-photo-cell {
+    overflow: hidden;
+    position: relative;
+  }
+  .lineup-photo-cell::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1rem 0.8rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .lineup-support {
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    border: 1px solid rgba(255,255,255,0.2);
-    opacity: 0.75;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--black);
+    opacity: 0.65;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .lineup-support strong {
+    font-weight: 900;
+    font-size: 1.2em;
+    opacity: 1;
+    color: var(--black);
+  }
+  .lineup-support .dot {
+    color: var(--purple);
+    opacity: 0.5;
+    margin: 0 0.3em;
   }
 
   /* ── SCHEDULE ── */
-  .schedule-wrap { display:flex; flex-direction:column; gap:0.6rem; }
-  .schedule-block {
-    border-radius: 14px;
+  .program-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    border-radius: 16px;
     overflow: hidden;
     background: var(--white);
-    box-shadow: 0 2px 16px rgba(102,0,192,0.06);
-    display: flex;
-    align-items: stretch;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid rgba(102,0,192,0.1);
   }
-  .schedule-block:hover {
-    transform: translateX(6px);
-    box-shadow: 0 4px 24px rgba(102,0,192,0.12);
+  .prog-row {
+    display: contents;
   }
-  .sch-accent {
-    width: 5px;
-    flex-shrink: 0;
-    background: var(--grad);
+  .prog-row:hover .prog-time,
+  .prog-row:hover .prog-name {
+    background: rgba(102,0,192,0.04);
   }
-  .schedule-block.sch-headline .sch-accent {
-    width: 7px;
-  }
-  .schedule-block.sch-headline {
-    background: var(--black);
-    color: var(--white);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-  }
-  .schedule-block.sch-headline .sch-time {
-    color: var(--pink);
-  }
-  .schedule-block.sch-headline .sch-label {
-    font-size: 1.15rem;
-  }
-  .sch-body {
-    padding: 1rem 1.5rem;
-    flex:1;
-    display:flex;
-    align-items:center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .sch-time {
+  .prog-time {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--purple);
+    padding: 0.85rem 1.5rem;
     white-space: nowrap;
-    min-width: 110px;
     font-variant-numeric: tabular-nums;
+    border-bottom: 1px solid rgba(102,0,192,0.08);
+    display: flex;
+    align-items: center;
+    transition: background 0.15s;
   }
-  .sch-label {
-    font-weight: 800;
+  .prog-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid rgba(102,0,192,0.08);
+    display: flex;
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .prog-row:last-child .prog-time,
+  .prog-row:last-child .prog-name {
+    border-bottom: none;
+  }
+  .prog-row.prog-hl .prog-time {
+    background: var(--black);
+    color: var(--pink);
+    font-weight: 900;
+  }
+  .prog-row.prog-hl .prog-name {
+    background: var(--black);
+    color: var(--white);
+    font-weight: 900;
     font-size: 1.05rem;
-    letter-spacing: -0.01em;
+  }
+  .prog-row.prog-hl:hover .prog-time,
+  .prog-row.prog-hl:hover .prog-name {
+    background: #1a1a1a;
   }
 
   /* ── MAP ── */
-  #location { background: var(--white); }
-  .location-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  @media(max-width:768px) { .location-grid { grid-template-columns:1fr; } }
-
   .map-embed {
     border-radius: 24px;
     overflow: hidden;
@@ -303,26 +296,6 @@
     background: linear-gradient(var(--white), var(--white)) padding-box, var(--grad) border-box;
   }
   .map-embed iframe { display:block; width:100%; height:450px; border:0; }
-
-  .loc-info { display:flex; flex-direction:column; gap:1.5rem; }
-  .loc-item {
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-  }
-  .loc-icon-wrap {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
-    background: var(--grad);
-    display: grid;
-    place-items: center;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-  .loc-text-label { font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--purple); margin-bottom:0.3rem; }
-  .loc-text-val { font-weight: 900; font-size: 1.15rem; }
-  .loc-text-sub { font-size:0.85rem; opacity:0.55; margin-top:0.2rem; }
 
   /* ── FOOTER ── */
   footer {
@@ -381,99 +354,37 @@
   }
   .cd-label { font-size: 0.65rem; letter-spacing:0.2em; text-transform:uppercase; opacity:0.55; color:var(--white); margin-top:0.3rem; }
 
-  /* ── STRIPAS ── */
-  .stripa {
-    position: fixed;
-    top: -100%;
-    width: 36px;
-    height: 400vh;
-    background-image: url('stripas.png');
-    background-size: 36px auto;
-    background-repeat: repeat-y;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0.65;
-    will-change: transform;
-  }
-  .stripa-left  { left: 0; }
-  .stripa-right { right: 0; }
   @keyframes mascotFloat {
     0%   { transform: translateY(0px); }
     100% { transform: translateY(-18px); }
   }
 
-  /* ── ARTIST CARDS ── */
-  .artist-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    transform: rotate(var(--deg));
-    transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
-    cursor: default;
-  }
-  .artist-card:hover {
-    transform: rotate(0deg) scale(1.08) translateY(-10px);
-  }
-  .artist-ring {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid var(--color);
-    box-shadow: 0 0 0 3px #fff, 0 12px 40px rgba(0,0,0,0.15);
-    transition: box-shadow 0.3s ease;
-  }
-  .artist-card:hover .artist-ring {
-    box-shadow: 0 0 0 3px #fff, 0 0 0 8px var(--color), 0 20px 50px rgba(0,0,0,0.2);
-  }
-  .artist-ring img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  .artist-card:hover .artist-ring img {
-    transform: scale(1.1);
-  }
-  .artist-name {
-    font-family: 'TradiDisplay', sans-serif;
-    font-weight: normal;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color);
-    text-align: center;
-  }
-
   /* ── RESPONSIVE ── */
-  @media(max-width:640px) {
-    .activities-container { height:auto !important; display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:0.5rem !important; padding:0.5rem 0 !important; }
-    .activities-container > svg { display:none !important; }
-    .activities-container > span { position:static !important; transform:none !important; width:100px !important; height:100px !important; font-size:0.65rem !important; margin:0 !important; animation:none !important; }
+  @media(max-width:768px) {
     .nav-links { display:none; }
     .meta-chip { font-size:0.8rem; padding:0.5rem 0.9rem; }
-    .sch-body { gap:0.8rem; padding:0.8rem 1rem; }
-    .sch-label { min-width: unset; font-size:0.95rem; }
-    .sch-time { min-width:80px; font-size:0.85rem; }
     body { overflow-x: hidden; }
-    .stripa { display: none !important; }
     .cd-block { padding:0.7rem 1rem; min-width:60px; }
     .cd-num { font-size:1.6rem; }
     .quotes-grid { grid-template-columns: 1fr !important; }
-    .zones-grid-2col { grid-template-columns: 1fr !important; }
-    .artist-ring { width:140px; height:140px; }
     section { padding:3rem 1rem; }
     .inner { padding:0 0.5rem; }
+    .lineup-photo-grid img { height: 180px; }
+    .lineup-headliners { font-size: clamp(1.3rem, 5vw, 2rem); }
+    .lineup-section { padding: 1.5rem; }
+    .prog-time { padding: 0.7rem 0.8rem; font-size: 0.8rem; }
+    .prog-name { padding: 0.7rem 0.8rem; font-size: 0.85rem; }
+    .prog-row.prog-hl .prog-name { font-size: 0.9rem; }
+  }
+  @media(max-width:480px) {
+    .lineup-photo-grid { grid-template-columns: 1fr; }
+    .lineup-photo-grid img { height: 220px; }
   }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<div class="stripa stripa-left" aria-hidden="true"></div>
-<div class="stripa stripa-right" aria-hidden="true"></div>
 <nav>
   <a href="#" style="display:flex;align-items:center;">
     <img src="up_left.png" alt="TrādiRīga" style="height:48px; width:auto; display:block;">
@@ -502,12 +413,8 @@
 
   <div style="animation:titleIn 0.8s cubic-bezier(.16,1,.3,1) both; position:relative; z-index:2; width:100%; max-width:980px; margin:0 auto 0.5rem;">
     <div style="perspective:1000px;" id="hero-header-wrap">
-      <img
-        id="hero-header-img"
-        src="header1.png"
-        alt="TrādiRīga — RadiRīga, DariRīga, RādiRīga"
-        style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.1s ease; will-change:transform;"
-      />
+      <img id="hero-header-img" src="header1.png" alt="TrādiRīga — RadiRīga, DariRīga, RādiRīga"
+        style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.1s ease; will-change:transform;" />
     </div>
   </div>
   <p class="hero-sub">Tavas ģimenes piedzīvojums Rīgas sirdī</p>
@@ -518,27 +425,24 @@
     <div class="meta-chip">Uzvaras parks</div>
   </div>
 
-  <!-- STAT + CTA -->
   <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:1.5rem; margin-top:1.5rem; position:relative; z-index:2; animation:fadeUp 0.9s ease 0.5s both;">
     <a href="#about" style="display:inline-block; background:var(--grad); color:#fff; font-weight:800; font-size:1rem; letter-spacing:0.06em; text-decoration:none; padding:0.9rem 2.5rem; border-radius:100px; box-shadow:0 10px 40px rgba(255,26,233,0.35); transition:transform 0.15s, box-shadow 0.15s;" onmouseover="this.style.transform='translateY(-3px) scale(1.03)';this.style.boxShadow='0 18px 50px rgba(255,26,233,0.5)'" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 40px rgba(255,26,233,0.35)'">
       Uzzināt vairāk ↓
     </a>
   </div>
 
-  <!-- COUNTDOWN -->
   <div class="countdown-wrap" id="countdown">
-    <div class="cd-block"><div class="cd-num" id="cd-d">72</div><div class="cd-label">Dienas</div></div>
-    <div class="cd-block"><div class="cd-num" id="cd-h">14</div><div class="cd-label">Stundas</div></div>
-    <div class="cd-block"><div class="cd-num" id="cd-m">22</div><div class="cd-label">Minūtes</div></div>
-    <div class="cd-block"><div class="cd-num" id="cd-s">08</div><div class="cd-label">Sekundes</div></div>
+    <div class="cd-block"><div class="cd-num" id="cd-d">00</div><div class="cd-label">Dienas</div></div>
+    <div class="cd-block"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Stundas</div></div>
+    <div class="cd-block"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Minūtes</div></div>
+    <div class="cd-block"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Sekundes</div></div>
   </div>
 </section>
 
-<!-- PRESS RELEASE -->
+<!-- ABOUT -->
 <section id="about" style="background:#fff; padding:5rem 1.5rem;">
   <div class="inner" style="max-width:1060px;">
 
-    <!-- INTRO -->
     <div style="margin-bottom:3rem;">
       <div class="s-label">Par festivālu</div>
       <h2 style="font-family:'TradiDisplay','Inter',sans-serif; font-weight:normal; font-size:clamp(2.2rem,5vw,3.8rem); line-height:1.05; margin-bottom:2rem;">TrādiRīga – pieredžu festivāls bērniem un ģimenēm</h2>
@@ -554,137 +458,91 @@
       </div>
     </div>
 
-    <!-- LINEUP BLOCK -->
+    <!-- ════ LINEUP ════ -->
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
       <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Skatuves programma</div>
 
-      <!-- BIG 3 ROUND PHOTOS -->
-      <div style="display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; margin-bottom:2.5rem;">
+      <div class="lineup-section">
+        <!-- Headliner names -->
+        <div class="lineup-headliners">
+          KAUT KAILI<span class="sep">·</span>EMĪLIJA BĒRZIŅA<br>
+          FIŅĶIS<span style="font-weight:600; font-size:0.65em; opacity:0.55; letter-spacing:0.05em;"> UN MADONAS ZAĻAIS KORIS</span>
+        </div>
 
-        <div class="artist-card" style="--deg:-6deg; --color:#FF1AE9;">
-          <div class="artist-ring">
+        <!-- Photo grid -->
+        <div class="lineup-photo-grid">
+          <div class="lineup-photo-cell" data-name="Kaut Kaili">
             <img src="KK-11.jpg" alt="Kaut Kaili">
           </div>
-          <div class="artist-name">Kaut Kaili</div>
-        </div>
-
-        <div class="artist-card" style="--deg:4deg; --color:#6600C0; margin-top:2rem;">
-          <div class="artist-ring">
+          <div class="lineup-photo-cell" data-name="Emīlija Bērziņa">
             <img src="Emilija-2.jpg" alt="Emīlija Bērziņa" style="object-position:top;">
           </div>
-          <div class="artist-name">Emīlija Bērziņa</div>
-        </div>
-
-        <div class="artist-card" style="--deg:-3deg; --color:#1B1BEA;">
-          <div class="artist-ring">
+          <div class="lineup-photo-cell" data-name="ELPO">
             <img src="ELPO_FOTO_2.jpg" alt="ELPO">
           </div>
-          <div class="artist-name">ELPO</div>
         </div>
 
+        <!-- Support acts -->
+        <div class="lineup-support">
+          Elza Rozentāle<span class="dot">·</span>ELPO<span class="dot">·</span><strong>Laime Pilnīga</strong><span class="dot">·</span>Annika<br>
+          Drumline Latvia<span class="dot">·</span>Tutas lapsa un Feneks
+        </div>
       </div>
 
-      <!-- TIMETABLE -->
-      <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(1.4rem,3vw,1.8rem); margin-bottom:1.2rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.8rem;">
+      <!-- ════ TIMETABLE ════ -->
+      <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(1.4rem,3vw,1.8rem); margin:2rem 0 1rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.8rem;">
         <span style="display:inline-block;width:24px;height:4px;background:var(--grad);border-radius:99px;"></span>
         TrādiRīga skatuve
       </div>
 
-      <div class="schedule-wrap">
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">12:30 – 13:20</div>
-            <div class="sch-label">Bērnu dziesmu izrāde "PATI, PATI, PATI"</div>
-          </div>
+      <div class="program-grid">
+        <div class="prog-row">
+          <div class="prog-time">12:30 – 13:20</div>
+          <div class="prog-name">Bērnu dziesmu izrāde "PATI, PATI, PATI"</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">13:25</div>
-            <div class="sch-label">Tutas lapsa un Feneks</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">13:25</div>
+          <div class="prog-name">Tutas lapsa un Feneks</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">13:55</div>
-            <div class="sch-label">Laime Pilnīga</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">13:55</div>
+          <div class="prog-name">Laime Pilnīga</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">15:00</div>
-            <div class="sch-label">Tutas lapsa un Feneks</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">15:00</div>
+          <div class="prog-name">Tutas lapsa un Feneks</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">15:30</div>
-            <div class="sch-label">Annika</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">15:30</div>
+          <div class="prog-name">Annika</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">16:35</div>
-            <div class="sch-label">Tutas lapsa un Feneks</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">16:35</div>
+          <div class="prog-name">Tutas lapsa un Feneks</div>
         </div>
-
-        <div class="schedule-block">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">17:05</div>
-            <div class="sch-label">Elza Rozentāle & Laime Pilnīga</div>
-          </div>
+        <div class="prog-row">
+          <div class="prog-time">17:05</div>
+          <div class="prog-name">Elza Rozentāle & Laime Pilnīga</div>
         </div>
-
-        <div class="schedule-block sch-headline">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">18:10</div>
-            <div class="sch-label">DRUMLINE LATVIA</div>
-          </div>
+        <div class="prog-row prog-hl">
+          <div class="prog-time">18:10</div>
+          <div class="prog-name">DRUMLINE LATVIA</div>
         </div>
-
-        <div class="schedule-block sch-headline">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">18:20</div>
-            <div class="sch-label">Emīlija Bērziņa</div>
-          </div>
+        <div class="prog-row prog-hl">
+          <div class="prog-time">18:20</div>
+          <div class="prog-name">Emīlija Bērziņa</div>
         </div>
-
-        <div class="schedule-block sch-headline">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">19:30</div>
-            <div class="sch-label">ELPO</div>
-          </div>
+        <div class="prog-row prog-hl">
+          <div class="prog-time">19:30</div>
+          <div class="prog-name">ELPO</div>
         </div>
-
-        <div class="schedule-block sch-headline">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">20:30</div>
-            <div class="sch-label">Kaut Kaili</div>
-          </div>
+        <div class="prog-row prog-hl">
+          <div class="prog-time">20:30</div>
+          <div class="prog-name">Kaut Kaili</div>
         </div>
-
-        <div class="schedule-block sch-headline">
-          <div class="sch-accent"></div>
-          <div class="sch-body">
-            <div class="sch-time">21:45</div>
-            <div class="sch-label">Fiņķis un Zaļais koris</div>
-          </div>
+        <div class="prog-row prog-hl">
+          <div class="prog-time">21:45</div>
+          <div class="prog-name">Fiņķis un Zaļais koris</div>
         </div>
       </div>
     </div>
@@ -754,12 +612,8 @@
     <div class="s-label">Festivāla karte</div>
     <h2 style="font-family:'TradiDisplay','Inter',sans-serif; font-weight:normal; font-size:clamp(2.5rem,6vw,4.5rem); line-height:1; margin-bottom:2rem;">Festivāla karte</h2>
     <div style="perspective:1200px; cursor:pointer;" id="map-wrap">
-      <img
-        src="map.jpg"
-        alt="TrādiRīga festivāla karte — Uzvaras parks"
-        id="map-img"
-        style="width:100%; border-radius:24px; display:block; box-shadow: 0 20px 60px rgba(102,0,192,0.2); transform: rotateX(3deg) rotateY(-2deg) scale(1.01); transition: transform 0.1s ease, box-shadow 0.3s ease; will-change:transform;"
-      />
+      <img src="map.jpg" alt="TrādiRīga festivāla karte — Uzvaras parks" id="map-img"
+        style="width:100%; border-radius:24px; display:block; box-shadow: 0 20px 60px rgba(102,0,192,0.2); transform: rotateX(3deg) rotateY(-2deg) scale(1.01); transition: transform 0.1s ease, box-shadow 0.3s ease; will-change:transform;" />
     </div>
     <script>
       const mapWrap = document.getElementById('map-wrap');
@@ -783,11 +637,8 @@
 <section style="background:var(--white); padding:5rem 1.5rem 0; text-align:center; overflow:hidden; position:relative;">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 80%, rgba(255,26,233,0.08), transparent);pointer-events:none;"></div>
   <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;">
-    <img
-      src="tradiriga-mascot.png"
-      alt="TrādiRīga mascot — Tiekamies 24. Maijā!"
-      style="width:100%;max-width:820px;display:block;margin:0 auto;animation:mascotFloat 4s ease-in-out infinite alternate;"
-    />
+    <img src="tradiriga-mascot.png" alt="TrādiRīga mascot — Tiekamies 24. Maijā!"
+      style="width:100%;max-width:820px;display:block;margin:0 auto;animation:mascotFloat 4s ease-in-out infinite alternate;" />
   </div>
 </section>
 
@@ -795,8 +646,6 @@
 <footer>
   <div class="footer-logo">TrādiRīga</div>
   <div class="footer-tagline">Tavas ģimenes piedzīvojums Rīgas sirdī · 24.05.2026</div>
-
-  <!-- SOCIAL LINKS -->
   <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:1.5rem;">
     <a href="https://www.facebook.com/profile.php?id=61570783167964" target="_blank" rel="noopener"
       style="display:flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; font-weight:700; font-size:0.85rem; letter-spacing:0.08em; padding:0.7rem 1.5rem; border-radius:100px; transition:background 0.2s;"
@@ -836,15 +685,6 @@
     });
   }
 
-  // Parallax stripas
-  const stripaLeft  = document.querySelector('.stripa-left');
-  const stripaRight = document.querySelector('.stripa-right');
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    stripaLeft.style.transform  = `translateY(${y * 0.25}px)`;
-    stripaRight.style.transform = `translateY(${y * -0.25}px)`;
-  }, { passive: true });
-
   // Countdown to May 24, 2026 12:00 Riga time
   const target = new Date('2026-05-24T12:00:00+03:00');
   function updateCountdown() {
@@ -866,7 +706,7 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // Scroll reveal
+  // Scroll reveal for program rows
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -875,25 +715,6 @@
       }
     });
   }, { threshold: 0.1 });
-
-  document.querySelectorAll('.zone-card, .schedule-block, .loc-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-
-  // After reveal, remove inline transition from zone-cards so CSS hover works cleanly
-  const zoneCards = document.querySelectorAll('.zone-card');
-  const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        setTimeout(() => { e.target.style.transition = ''; }, 700);
-        cardObserver.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  zoneCards.forEach(el => cardObserver.observe(el));
 </script>
 </body>
 </html>
