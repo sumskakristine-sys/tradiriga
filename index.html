@@ -155,9 +155,7 @@
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--black);
-    margin-bottom: 1rem;
-    text-align: justify;
-    text-align-last: left;
+    margin-bottom: 0;
   }
   .lineup-headliners .sep {
     color: var(--purple);
@@ -169,11 +167,9 @@
     font-weight: 800;
     font-size: clamp(1rem, 2.5vw, 1.35rem);
     color: var(--black);
-    line-height: 2.2;
-    margin-top: 1rem;
+    line-height: 1.4;
+    margin-top: 0.8rem;
     letter-spacing: 0.02em;
-    text-align: justify;
-    text-align-last: left;
   }
   .lineup-support .dot {
     opacity: 0.35;
@@ -395,8 +391,10 @@
       <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Skatuves programma</div>
 
       <!-- Headliner names above grid -->
-      <div class="lineup-headliners">
-        KAUT KAILI<span class="sep">·</span>EMĪLIJA<br>
+      <div class="lineup-headliners" style="text-align:justify; text-align-last:justify;">
+        KAUT KAILI<span class="sep">·</span>EMĪLIJA
+      </div>
+      <div class="lineup-headliners" style="text-align:left; margin-bottom:1rem;">
         FIŅĶIS<span style="font-weight:600; font-size:0.65em; letter-spacing:0.05em;"> UN MADONAS ZAĻAIS KORIS</span>
       </div>
 
@@ -404,8 +402,10 @@
       <img src="grid.png" alt="TrādiRīga mākslinieki" style="width:100%; display:block;">
 
       <!-- Support acts below grid -->
+      <div class="lineup-support" style="text-align:justify; text-align-last:justify;">
+        ELZA ROZENTĀLE<span class="dot">·</span>ELPO<span class="dot">·</span>LAIME PILNĪGA<span class="dot">·</span>ANNIKA
+      </div>
       <div class="lineup-support">
-        ELZA ROZENTĀLE<span class="dot">·</span>ELPO<span class="dot">·</span>LAIME PILNĪGA<span class="dot">·</span>ANNIKA<br>
         DRUMLINE LATVIA<span class="dot">·</span>TUTAS LAPSA UN FENEKS
       </div>
 
@@ -519,6 +519,7 @@
     <!-- CLOSING -->
     <div style="border-top:3px solid #000; padding-top:1.5rem;">
       <p style="font-size:0.95rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#333; margin:0;">
+        Festivāls · Uzvaras parks · 12.00–22.00 · Ieeja bez maksas
       </p>
     </div>
 
