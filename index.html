@@ -271,21 +271,6 @@
   .prog-row:last-child .prog-name {
     border-bottom: none;
   }
-  .prog-row.prog-hl .prog-time {
-    background: var(--black);
-    color: var(--pink);
-    font-weight: 900;
-  }
-  .prog-row.prog-hl .prog-name {
-    background: var(--black);
-    color: var(--white);
-    font-weight: 900;
-    font-size: 1.05rem;
-  }
-  .prog-row.prog-hl:hover .prog-time,
-  .prog-row.prog-hl:hover .prog-name {
-    background: #1a1a1a;
-  }
 
   /* ── MAP ── */
   .map-embed {
@@ -374,7 +359,6 @@
     .lineup-section { padding: 1.5rem; }
     .prog-time { padding: 0.7rem 0.8rem; font-size: 0.8rem; }
     .prog-name { padding: 0.7rem 0.8rem; font-size: 0.85rem; }
-    .prog-row.prog-hl .prog-name { font-size: 0.9rem; }
   }
   @media(max-width:480px) {
     .lineup-photo-grid { grid-template-columns: 1fr; }
@@ -416,6 +400,9 @@
       <img id="hero-header-img" src="header1.png" alt="TrādiRīga — RadiRīga, DariRīga, RādiRīga"
         style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.1s ease; will-change:transform;" />
     </div>
+  </div>
+  <div style="position:relative; z-index:2; width:100%; max-width:980px; margin:0.5rem auto 0; animation:fadeUp 0.9s ease 0.15s both;">
+    <img src="sponsors.png" alt="TrādiRīga partneri" style="width:100%; display:block;">
   </div>
   <p class="hero-sub">Tavas ģimenes piedzīvojums Rīgas sirdī</p>
 
@@ -469,18 +456,8 @@
           FIŅĶIS<span style="font-weight:600; font-size:0.65em; opacity:0.55; letter-spacing:0.05em;"> UN MADONAS ZAĻAIS KORIS</span>
         </div>
 
-        <!-- Photo grid -->
-        <div class="lineup-photo-grid">
-          <div class="lineup-photo-cell" data-name="Kaut Kaili">
-            <img src="KK-11.jpg" alt="Kaut Kaili">
-          </div>
-          <div class="lineup-photo-cell" data-name="Emīlija Bērziņa">
-            <img src="Emilija-2.jpg" alt="Emīlija Bērziņa" style="object-position:top;">
-          </div>
-          <div class="lineup-photo-cell" data-name="ELPO">
-            <img src="ELPO_FOTO_2.jpg" alt="ELPO">
-          </div>
-        </div>
+        <!-- Artist grid photo -->
+        <img src="grid.png" alt="TrādiRīga mākslinieki" style="width:100%; display:block; border-radius:16px; margin-bottom:1.5rem;">
 
         <!-- Support acts -->
         <div class="lineup-support">
@@ -524,23 +501,23 @@
           <div class="prog-time">17:05</div>
           <div class="prog-name">Elza Rozentāle & Laime Pilnīga</div>
         </div>
-        <div class="prog-row prog-hl">
+        <div class="prog-row">
           <div class="prog-time">18:10</div>
           <div class="prog-name">DRUMLINE LATVIA</div>
         </div>
-        <div class="prog-row prog-hl">
+        <div class="prog-row">
           <div class="prog-time">18:20</div>
           <div class="prog-name">Emīlija Bērziņa</div>
         </div>
-        <div class="prog-row prog-hl">
+        <div class="prog-row">
           <div class="prog-time">19:30</div>
           <div class="prog-name">ELPO</div>
         </div>
-        <div class="prog-row prog-hl">
+        <div class="prog-row">
           <div class="prog-time">20:30</div>
           <div class="prog-name">Kaut Kaili</div>
         </div>
-        <div class="prog-row prog-hl">
+        <div class="prog-row">
           <div class="prog-time">21:45</div>
           <div class="prog-name">Fiņķis un Zaļais koris</div>
         </div>
