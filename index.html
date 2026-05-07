@@ -299,6 +299,7 @@
     .cd-block { padding:0.7rem 1rem; min-width:60px; }
     .cd-num { font-size:1.6rem; }
     .quotes-grid { grid-template-columns: 1fr !important; }
+    .stages-grid { grid-template-columns: 1fr !important; }
     section { padding:3rem 1rem; }
     .inner { padding:0 0.5rem; }
     .lineup-headliners { font-size: clamp(1.3rem, 5vw, 2rem); }
@@ -390,68 +391,104 @@
     <div style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
       <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Skatuves programma</div>
 
-
+      <!-- Headliner names above grid -->
+      <div class="lineup-headliners">
+        KAUT KAILI<span class="sep">·</span>EMĪLIJA<br>
+        FIŅĶIS<span style="font-weight:600; font-size:0.65em; letter-spacing:0.05em;"> UN MADONAS ZAĻAIS KORIS</span>
+      </div>
 
       <!-- Artist grid photo -->
       <img src="grid.png" alt="TrādiRīga mākslinieki" style="width:100%; display:block;">
 
-  
-
-      <!-- ════ TIMETABLE ════ -->
-      <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(1.4rem,3vw,1.8rem); margin:2rem 0 1rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.8rem;">
-        <span style="display:inline-block;width:24px;height:4px;background:var(--grad);border-radius:99px;"></span>
-        TrādiRīga skatuve
+      <!-- Support acts below grid -->
+      <div class="lineup-support">
+        ELZA ROZENTĀLE<span class="dot">·</span>ELPO<span class="dot">·</span>LAIME PILNĪGA<span class="dot">·</span>ANNIKA<br>
+        DRUMLINE LATVIA<span class="dot">·</span>TUTAS LAPSA UN FENEKS
       </div>
 
-      <div class="program-grid">
-        <div class="prog-row">
-          <div class="prog-time">12.30</div>
-          <div class="prog-name">Bērnu dziesmu izrāde "PATI, PATI, PATI"</div>
+      <!-- ════ TIMETABLE — TWO STAGES ════ -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:2rem;" class="stages-grid">
+
+        <!-- LEFT: TrādiRīga skatuve -->
+        <div>
+          <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(1.4rem,3vw,1.8rem); margin-bottom:1rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.8rem;">
+            <span style="display:inline-block;width:24px;height:4px;background:var(--grad);border-radius:99px;"></span>
+            TrādiRīga skatuve
+          </div>
+          <div class="program-grid">
+            <div class="prog-row">
+              <div class="prog-time">12:30</div>
+              <div class="prog-name">Bērnu dziesmu izrāde "PATI, PATI, PATI"</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">13:25</div>
+              <div class="prog-name">Tutas lapsa un Feneks</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">14:00</div>
+              <div class="prog-name">Laime Pilnīga</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">14:45</div>
+              <div class="prog-name">Tutas lapsa un Feneks</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">15:30</div>
+              <div class="prog-name">Annika</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">16:15</div>
+              <div class="prog-name">Tutas lapsa un Feneks</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">17:00</div>
+              <div class="prog-name">Elza Rozentāle & Laime Pilnīga</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">18:00</div>
+              <div class="prog-name">DRUMLINE LATVIA</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">18:30</div>
+              <div class="prog-name">Emīlija Bērziņa</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">19:30</div>
+              <div class="prog-name">ELPO</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">20:30</div>
+              <div class="prog-name">Kaut Kaili</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">21:30</div>
+              <div class="prog-name">Fiņķis un Zaļais koris</div>
+            </div>
+          </div>
         </div>
-        <div class="prog-row">
-          <div class="prog-time">13.25</div>
-          <div class="prog-name">Tutas lapsa un Feneks</div>
+
+        <!-- RIGHT: TrādiRādi skatuve -->
+        <div>
+          <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(1.4rem,3vw,1.8rem); margin-bottom:1rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:0.8rem;">
+            <span style="display:inline-block;width:24px;height:4px;background:var(--grad);border-radius:99px;"></span>
+            TrādiRādi skatuve
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:1rem;">
+            <img src="brunais_siers.png" alt="Kvadriforns izrāde Brūnais siers" style="width:100%; display:block; object-fit:cover; aspect-ratio:4/3;">
+            <img src="skolotajas.png" alt="Leļļu teātra izrāde Skolotājas" style="width:100%; display:block; object-fit:cover; aspect-ratio:4/3;">
+          </div>
+          <div class="program-grid">
+            <div class="prog-row">
+              <div class="prog-time">12:30</div>
+              <div class="prog-name">Kvadriforns izrāde "Brūnais siers"</div>
+            </div>
+            <div class="prog-row">
+              <div class="prog-time">15:00</div>
+              <div class="prog-name">Leļļu teātra izrāde "Skolotājas"</div>
+            </div>
+          </div>
         </div>
-        <div class="prog-row">
-          <div class="prog-time">14.00</div>
-          <div class="prog-name">Laime Pilnīga</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">14.45</div>
-          <div class="prog-name">Tutas lapsa un Feneks</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">15.30</div>
-          <div class="prog-name">Annika</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">16.15</div>
-          <div class="prog-name">Tutas lapsa un Feneks</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">17.00</div>
-          <div class="prog-name">Elza Rozentāle & Laime Pilnīga</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">18.00</div>
-          <div class="prog-name">DRUMLINE LATVIA</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">18.30</div>
-          <div class="prog-name">Emīlija Bērziņa</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">19.30</div>
-          <div class="prog-name">ELPO</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">20.30</div>
-          <div class="prog-name">Kaut Kaili</div>
-        </div>
-        <div class="prog-row">
-          <div class="prog-time">21.30</div>
-          <div class="prog-name">Fiņķis un Zaļais koris</div>
-        </div>
+
       </div>
     </div>
 
