@@ -333,12 +333,21 @@
         style="width:100%; display:block; transform:rotateX(2deg) rotateY(-1deg) scale(1.01); transition:transform 0.1s ease; will-change:transform;" />
     </div>
   </div>
+
+  <!-- RECAP VIDEO -->
+  <div style="position:relative; z-index:2; width:100%; max-width:980px; margin:2rem auto 0; animation:fadeUp 0.9s ease 0.12s both;">
+    <video controls playsinline preload="metadata" style="width:100%; display:block;">
+      <source src="recap.mp4" type="video/mp4">
+      <source src="recap.webm" type="video/webm">
+    </video>
+  </div>
+
   <div style="position:relative; z-index:2; width:100%; max-width:800px; margin:5rem auto 0; animation:fadeUp 0.9s ease 0.15s both;">
     <img src="sponsors.png" alt="TrādiRīga partneri" style="width:100%; display:block; margin-bottom:5rem;">
   </div>
 
   <div class="hero-meta">
-    <div class="meta-chip">24/05/2026</div>
+    <div class="meta-chip">24/05/2027</div>
     <div class="meta-chip">12:00 – 22:00</div>
     <div class="meta-chip">Uzvaras parks</div>
   </div>
@@ -380,7 +389,7 @@
     <div id="programma" style="border-top:3px solid #000; padding-top:1.5rem; margin-bottom:1.5rem;">
       <div style="font-family:'TradiDisplay','Inter',sans-serif; font-size:clamp(2rem,4vw,3rem); margin-bottom:1.5rem; letter-spacing:-0.01em;">Skatuves programma</div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:2rem;" class="stages-grid">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:2rem; align-items:end;" class="stages-grid">
 
         <!-- LEFT: TrādiRīga skatuve -->
         <div>
@@ -488,7 +497,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">TrādiRīga</div>
-  <div class="footer-tagline">Tavas ģimenes piedzīvojums Rīgas sirdī · 24.05.2026</div>
+  <div class="footer-tagline">Tavas ģimenes piedzīvojums Rīgas sirdī · 24.05.2027</div>
   <div style="display:flex; justify-content:center; gap:1rem; margin-bottom:1.5rem;">
     <a href="https://www.facebook.com/profile.php?id=61570783167964" target="_blank" rel="noopener"
       style="display:flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.1); color:#fff; text-decoration:none; font-weight:700; font-size:0.85rem; letter-spacing:0.08em; padding:0.7rem 1.5rem; border-radius:100px; transition:background 0.2s;"
@@ -540,8 +549,8 @@
     });
   }
 
-  // Countdown to May 24, 2026 12:00 Riga time
-  const target = new Date('2026-05-24T12:00:00+03:00');
+  // Countdown to May 24, 2027 12:00 Riga time
+  const target = new Date('2027-05-24T12:00:00+03:00');
   function updateCountdown() {
     const now = new Date();
     const diff = target - now;
